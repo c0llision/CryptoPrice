@@ -7,13 +7,14 @@ using Xamarin.Forms;
 
 namespace CryptoPrice
 {
-    public partial class MainPage : ContentPage
+    public partial class LivePrice : ContentPage
     {
-        public MainPage()
+
+        public LivePrice()
         {
             InitializeComponent();
-
             var btcPrice = new BitcoinPrice();
+
             updatePrice(btcPrice);
         }
 
