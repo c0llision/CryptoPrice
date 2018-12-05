@@ -27,7 +27,13 @@ namespace CryptoPrice
 
         private void btnUpdate_Clicked(object sender, EventArgs e)
         {
-            btcPrice.currency = "LTC";
+            int selectedIndex = pckCurrency.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                btcPrice.currency = pckCurrency.Items[selectedIndex];
+            }
+
             updatePrice();
         }
     }

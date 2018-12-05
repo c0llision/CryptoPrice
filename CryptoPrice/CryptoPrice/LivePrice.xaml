@@ -15,11 +15,11 @@
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
 
-        <Picker Title="Currency">
+        <Picker x:Name="pckCurrency" Title="Currency" SelectedIndexChanged="btnUpdate_Clicked">
             <Picker.Items>
-                <x:String>Bitcoin</x:String>
-                <x:String>Litecoin</x:String>
-                <x:String>Ethereum</x:String>
+                <x:String>BTC</x:String>
+                <x:String>LTC</x:String>
+                <x:String>ETH</x:String>
             </Picker.Items>
         </Picker>
 
