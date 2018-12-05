@@ -10,12 +10,22 @@
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" Font="Bold,40" />
 
-         <Entry Text="1" 
+
+        <Label Text="1 BTC To EUR" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <Label Text="BTC To EUR" 
+
+        <Picker Title="Currency">
+            <Picker.Items>
+                <x:String>Bitcoin</x:String>
+                <x:String>Litecoin</x:String>
+                <x:String>Ethereum</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Update" x:Name="btnUpdate"
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="CenterAndExpand" Clicked="btnUpdate_Clicked" />
     </StackLayout>
 
 </ContentPage>

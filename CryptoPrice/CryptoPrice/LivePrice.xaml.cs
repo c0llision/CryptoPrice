@@ -9,21 +9,26 @@ namespace CryptoPrice
 {
     public partial class LivePrice : ContentPage
     {
+        BitcoinPrice btcPrice = new BitcoinPrice();
 
         public LivePrice()
         {
             InitializeComponent();
-            var btcPrice = new BitcoinPrice();
 
-            updatePrice(btcPrice);
+            updatePrice();
         }
 
-        private void updatePrice(BitcoinPrice btcPrice)
+        private void updatePrice()
         {
             btcPrice.updatePrice();
             string price = "€ " + btcPrice.currentPrice;
             lblPrice.Text = price;
         }
 
+        private void btnUpdate_Clicked(object sender, EventArgs e)
+        {
+            btcPrice.currency = "LTC";
+            updatePrice();
+        }
     }
 }

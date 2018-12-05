@@ -10,8 +10,9 @@ namespace CryptoPrice
     {
         private HttpClient client = new HttpClient();
         public int currentPrice = 99999;
+        public string currency = "BTC";
 
-        public void updatePrice(string currency="BTC")
+        public void updatePrice()
         {
             var priceUrl = "https://apiv2.bitcoinaverage.com/convert/global?from=" + currency + "&to=EUR&amount=1";
             var response = client.GetAsync(priceUrl).Result;
