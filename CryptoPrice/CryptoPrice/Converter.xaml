@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CryptoPrice.Converter">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtFrom" Placeholder="From" Keyboard="Numeric" />
+                <Picker x:Name="pckCurrencyFrom">
+                    <Picker.Items>
+                        <x:String>EUR</x:String>
+                        <x:String>USD</x:String>
+                        <x:String>BTC</x:String>
+                        <x:String>LTC</x:String>
+                        <x:String>ETH</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtTo" Placeholder="To" Keyboard="Numeric" />
+                <Picker x:Name="pckCurrencyTo">
+                    <Picker.Items>
+                        <x:String>EUR</x:String>
+                        <x:String>USD</x:String>
+                        <x:String>BTC</x:String>
+                        <x:String>LTC</x:String>
+                        <x:String>ETH</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

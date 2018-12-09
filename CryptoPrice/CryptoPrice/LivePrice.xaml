@@ -21,6 +21,7 @@
                 <x:String>LTC</x:String>
                 <x:String>ETH</x:String>
             </Picker.Items>
+            <Picker.SelectedIndex>0</Picker.SelectedIndex>
         </Picker>
 
         <Button Text="Update" x:Name="btnUpdate"
