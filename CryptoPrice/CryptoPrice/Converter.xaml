@@ -6,7 +6,7 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtFrom" Placeholder="From" Keyboard="Numeric" />
+                <Entry x:Name="txtFrom" Placeholder="From" Keyboard="Numeric" TextChanged="updateConversion" />
                 <Picker x:Name="pckCurrencyFrom">
                     <Picker.Items>
                         <x:String>EUR</x:String>
@@ -20,7 +20,7 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtTo" Placeholder="To" Keyboard="Numeric" />
+                <Label x:Name="txtTo" Text="1.00" />
                 <Picker x:Name="pckCurrencyTo">
                     <Picker.Items>
                         <x:String>EUR</x:String>
@@ -29,7 +29,7 @@
                         <x:String>LTC</x:String>
                         <x:String>ETH</x:String>
                     </Picker.Items>
-                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                    <Picker.SelectedIndex>2</Picker.SelectedIndex>
                 </Picker>
             </StackLayout>
 
