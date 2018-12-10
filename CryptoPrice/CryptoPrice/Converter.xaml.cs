@@ -22,6 +22,20 @@ namespace CryptoPrice
         private void updateConversion(object sender, TextChangedEventArgs e)
         {
             btcConvert.amount = txtFrom.Text;
+
+            int fromIndex = pckCurrencyFrom.SelectedIndex;
+            int toIndex = pckCurrencyTo.SelectedIndex;
+
+            if  (fromIndex != -1 && toIndex != -1)
+            {
+                btcConvert.fromCurrency = pckCurrencyFrom.Items[fromIndex];
+                btcConvert.toCurrency = pckCurrencyTo.Items[toIndex];
+            }
+            
+            btcConvert.convert();
+
+            txtTo.Text = btcConvert.convertAmount;
         }
+
     }
 }
