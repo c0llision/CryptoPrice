@@ -6,7 +6,7 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtFrom" Placeholder="From" Keyboard="Numeric" TextChanged="updateConversion" />
+                <Entry x:Name="txtFrom" Placeholder="Amount" Keyboard="Numeric" TextChanged="updateConversion" />
                 <Picker x:Name="pckCurrencyFrom" SelectedIndexChanged="updateConversion" >
                     <Picker.Items>
                         <x:String>BTC</x:String>
@@ -24,7 +24,7 @@
                         <x:String>EUR</x:String>
                         <x:String>USD</x:String>
                     </Picker.Items>
-                    <Picker.SelectedIndex>2</Picker.SelectedIndex>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
                 </Picker>
             </StackLayout>
 

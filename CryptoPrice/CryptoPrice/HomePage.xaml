@@ -6,4 +6,5 @@
   <!--Pages can be added as references or inline-->
     <local:LivePrice Title="Live Price"></local:LivePrice>
     <local:Converter Title="Converter"></local:Converter>
+    <local:PriceHistory Title="History"></local:PriceHistory>
 </TabbedPage>
