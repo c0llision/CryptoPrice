@@ -5,6 +5,23 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
+                <Picker x:Name="pckTime">
+                    <Picker.Items>
+                        <x:String>7 days</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+                <Picker x:Name="pckCurrency" SelectedIndexChanged="pckCurrency_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>BTC</x:String>
+                        <x:String>LTC</x:String>
+                        <x:String>ETH</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Date" Font="Bold"
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
