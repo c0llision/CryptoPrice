@@ -5,10 +5,17 @@
              x:Class="CryptoPrice.Graph">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <forms:ChartView x:Name="barChart" HeightRequest="125"/>
+                <Picker x:Name="pckCurrency" SelectedIndexChanged="pckCurrency_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>BTC</x:String>
+                        <x:String>LTC</x:String>
+                        <x:String>ETH</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+
+            <forms:ChartView x:Name="barChart" HeightRequest="450" WidthRequest="500"
+                VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

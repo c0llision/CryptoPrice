@@ -13,38 +13,47 @@ namespace CryptoPrice
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Graph : ContentPage
 	{
+        btcHistory btcHistory = new btcHistory();
+
 		public Graph ()
 		{
 			InitializeComponent ();
-            barChart.Chart = new BarChart { Entries = _entries };
+            update();
 		}
 
-        private readonly List<Microcharts.Entry> _entries = new List<Microcharts.Entry>()
+        public void update()
         {
-            new Microcharts.Entry(200)
+            btcHistory.update();
+
+            List<Microcharts.Entry> entries = new List<Microcharts.Entry>() {  };
+
+            for (int i = 0; i < 7; i++)
             {
-                Label = "Mon",
-                ValueLabel = "200",
-                Color = SkiaSharp.SKColor.Parse("#0000ff"),
-            },
-            new Microcharts.Entry(210)
+                entries.Add(new Microcharts.Entry(float.Parse(btcHistory.prices[i]))
+                {
+                    Label = btcHistory.dates[i],
+                    ValueLabel = btcHistory.prices[i],
+                    Color = SkiaSharp.SKColor.Parse("#0000ff"),
+                });
+            }
+
+            barChart.Chart = new LineChart { Entries = entries };
+
+        }
+
+
+        private void pckCurrency_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int index = pckCurrency.SelectedIndex;
+
+            if(index != -1)
             {
-                Label = "Mon",
-                ValueLabel = "210",
-                Color = SkiaSharp.SKColor.Parse("#0000ff"),
-            },
-            new Microcharts.Entry(120)
-            {
-                Label = "Mon",
-                ValueLabel = "120",
-                Color = SkiaSharp.SKColor.Parse("#0000ff"),
-            },
-            new Microcharts.Entry(100)
-            {
-                Label = "Mon",
-                ValueLabel = "100",
-                Color = SkiaSharp.SKColor.Parse("#0000ff"),
-            },
-        };
-	}
+                btcHistory.currency = pckCurrency.Items[index];
+            }
+
+            update();
+        }
+
+    }
 }
