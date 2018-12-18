@@ -5,7 +5,6 @@
             x:Class="CryptoPrice.HomePage">
   <!--Pages can be added as references or inline-->
     <local:LivePrice Title="Live Price"></local:LivePrice>
-    <local:Converter Title="Converter"></local:Converter>
     <local:PriceHistory Title="History"></local:PriceHistory>
-    <local:Graph Title="Graph"></local:Graph>
+    <local:Converter Title="Converter"></local:Converter>
 </TabbedPage>

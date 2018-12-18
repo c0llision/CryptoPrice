@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="CryptoPrice.PriceHistory">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Picker x:Name="pckTime">
@@ -20,6 +22,10 @@
                     <Picker.SelectedIndex>0</Picker.SelectedIndex>
                 </Picker>
             </StackLayout>
+
+
+            <forms:ChartView x:Name="barChart" HeightRequest="250" WidthRequest="100"
+                VerticalOptions="CenterAndExpand" />
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Date" Font="Bold"
@@ -94,5 +100,6 @@
             </StackLayout>
 
         </StackLayout>
+</ScrollView>
     </ContentPage.Content>
 </ContentPage>

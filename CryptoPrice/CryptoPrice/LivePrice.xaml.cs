@@ -14,7 +14,6 @@ namespace CryptoPrice
         public LivePrice()
         {
             InitializeComponent();
-
             updatePrice();
         }
 

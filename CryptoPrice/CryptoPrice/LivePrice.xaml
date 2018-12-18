@@ -6,27 +6,40 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="€1,444.44"  x:Name="lblPrice"
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" Font="Bold,40" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Currency:" />
+            <Picker x:Name="pckCurrency" SelectedIndexChanged="btnUpdate_Clicked">
+                <Picker.Items>
+                    <x:String>BTC</x:String>
+                    <x:String>LTC</x:String>
+                    <x:String>ETH</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+        </StackLayout>
+
+        <StackLayout VerticalOptions="Center" Margin="0,20,0,0">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text="Daily High: " />
+                <Label Text="1234" Font="Bold,15" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text="Daily Low: " />
+                <Label Text="1234" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0" >
+            <Label Text="Current Price:" Font="30" />
+            <Button Text="1234"  x:Name="lblPrice" Clicked="btnUpdate_Clicked"
+                    BackgroundColor="Transparent"
+                    BorderColor="LightBlue"
+               Font="Bold,40"  />
+        </StackLayout>
 
 
-        <Label Text="1 BTC To EUR" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-
-        <Picker x:Name="pckCurrency" Title="Currency" SelectedIndexChanged="btnUpdate_Clicked">
-            <Picker.Items>
-                <x:String>BTC</x:String>
-                <x:String>LTC</x:String>
-                <x:String>ETH</x:String>
-            </Picker.Items>
-            <Picker.SelectedIndex>0</Picker.SelectedIndex>
-        </Picker>
-
-        <Button Text="Update" x:Name="btnUpdate"
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" Clicked="btnUpdate_Clicked" />
     </StackLayout>
 
 </ContentPage>

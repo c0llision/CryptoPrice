@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CryptoPrice.Converter">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <StackLayout HorizontalOptions="Center">
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtFrom" Placeholder="Amount" Keyboard="Numeric" TextChanged="updateConversion" />
+                <Label Text="From: " />
+                <Entry x:Name="txtFrom" Text="1" Keyboard="Numeric" TextChanged="updateConversion" />
                 <Picker x:Name="pckCurrencyFrom" SelectedIndexChanged="updateConversion" >
                     <Picker.Items>
                         <x:String>BTC</x:String>
@@ -17,9 +18,9 @@
                 </Picker>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label x:Name="txtTo" Text="1.00" />
-                <Picker x:Name="pckCurrencyTo">
+            <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+                <Label x:Name="txtTo" Text="1.00" Font="Bold,30" />
+                <Picker x:Name="pckCurrencyTo" Margin="10,0,0,0">
                     <Picker.Items>
                         <x:String>EUR</x:String>
                         <x:String>USD</x:String>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microcharts;
 
 namespace CryptoPrice
 {
@@ -13,6 +14,8 @@ namespace CryptoPrice
 	public partial class PriceHistory : ContentPage
 	{
         btcHistory btcHistory = new btcHistory();
+
+        string[] colours =  { "#ff0033", "#ff8000", "#ffe600", "#1ab34d", "#1a66ff", "#801ab3" , "#801ab3" };
 		public PriceHistory ()
 		{
 			InitializeComponent ();
@@ -30,6 +33,21 @@ namespace CryptoPrice
             }
 
             btcHistory.update();
+
+            List<Microcharts.Entry> entries = new List<Microcharts.Entry>() {  };
+
+            for (int i = 0; i < 7; i++)
+            {
+                entries.Add(new Microcharts.Entry(float.Parse(btcHistory.prices[i]))
+                {
+                    Label = btcHistory.dates[i],
+                    ValueLabel = btcHistory.prices[i],
+                    Color = SkiaSharp.SKColor.Parse(colours[i]),
+                });
+            }
+
+            barChart.Chart = new LineChart { Entries = entries };
+
 
             date1.Text = btcHistory.dates[0];
             date2.Text = btcHistory.dates[1];

@@ -17,9 +17,10 @@ namespace CryptoPrice
 		public Converter ()
 		{
 			InitializeComponent ();
+            update();
 		}
 
-        private void updateConversion(object sender, TextChangedEventArgs e)
+        public void update()
         {
             btcConvert.amount = txtFrom.Text;
 
@@ -35,6 +36,12 @@ namespace CryptoPrice
             btcConvert.convert();
 
             txtTo.Text = btcConvert.convertAmount;
+
+        }
+
+        private void updateConversion(object sender, TextChangedEventArgs e)
+        {
+            update();
         }
 
     }
