@@ -5,9 +5,8 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center">
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="From: " />
-                <Entry x:Name="txtFrom" Text="1" Keyboard="Numeric" TextChanged="updateConversion" />
+            <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+                <Entry x:Name="txtFrom" Text="1" WidthRequest="100" Keyboard="Numeric" TextChanged="updateConversion" />
                 <Picker x:Name="pckCurrencyFrom" SelectedIndexChanged="updateConversion" >
                     <Picker.Items>
                         <x:String>BTC</x:String>
@@ -17,6 +16,8 @@
                     <Picker.SelectedIndex>0</Picker.SelectedIndex>
                 </Picker>
             </StackLayout>
+
+            <Label Text="Is Equal To:" Font="Bold,20" VerticalOptions="Center" Margin="0,50,0,0" />
 
             <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
                 <Label x:Name="txtTo" Text="1.00" Font="Bold,30" />

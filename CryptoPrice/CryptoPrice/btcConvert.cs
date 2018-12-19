@@ -25,7 +25,8 @@ namespace CryptoPrice
                 string responseString = response.Content.ReadAsStringAsync().Result;
                 dynamic priceData = JsonConvert.DeserializeObject(responseString);
 
-                convertAmount = priceData.price;
+                float i = priceData.price;
+                convertAmount = i.ToString("N2");
             }
 
         }

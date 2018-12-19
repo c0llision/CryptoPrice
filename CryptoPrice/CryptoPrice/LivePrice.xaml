@@ -7,7 +7,7 @@
     <StackLayout>
         <!-- Place new controls here -->
 
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,50,0,0">
             <Label Text="Currency:" />
             <Picker x:Name="pckCurrency" SelectedIndexChanged="btnUpdate_Clicked">
                 <Picker.Items>
@@ -27,7 +27,7 @@
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
                 <Label Text="Daily Low: " />
-                <Label Text="1234" />
+                <Label Text="1234" Font="Bold,15" />
             </StackLayout>
         </StackLayout>
 

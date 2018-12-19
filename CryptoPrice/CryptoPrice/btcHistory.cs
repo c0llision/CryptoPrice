@@ -26,9 +26,9 @@ namespace CryptoPrice
                 for (int i=0; i < 7; i++)
                 {
                     string date = data[i].time;
-                    string price = data[i].average;
+                    float price = data[i].average;
                     dates[i] = date.Trim().Substring(0, 10);
-                    prices[i] = price;
+                    prices[i] = price.ToString("N2");
                 }
             }
 

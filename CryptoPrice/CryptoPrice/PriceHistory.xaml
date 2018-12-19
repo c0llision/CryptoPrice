@@ -5,8 +5,8 @@
              x:Class="CryptoPrice.PriceHistory">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
+        <StackLayout Margin="0,0,0,20">
+            <StackLayout Orientation="Horizontal" >
                 <Picker x:Name="pckTime">
                     <Picker.Items>
                         <x:String>7 days</x:String>
