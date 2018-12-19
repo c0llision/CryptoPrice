@@ -39,6 +39,13 @@
                Font="Bold,40"  />
         </StackLayout>
 
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0" >
+            <Label Text="Portfolio Value:" Font="30" />
+            <Button Text="1234"  x:Name="lblPortfolio" Clicked="btnUpdate_Clicked"
+                    BackgroundColor="Transparent"
+                    BorderColor="LightBlue"
+               Font="Bold,40"  />
+        </StackLayout>
 
     </StackLayout>
 

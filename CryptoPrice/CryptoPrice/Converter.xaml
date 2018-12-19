@@ -21,7 +21,7 @@
 
             <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
                 <Label x:Name="txtTo" Text="1.00" Font="Bold,30" />
-                <Picker x:Name="pckCurrencyTo" Margin="10,0,0,0">
+                <Picker x:Name="pckCurrencyTo" SelectedIndexChanged="updateConversion" Margin="10,0,0,0">
                     <Picker.Items>
                         <x:String>EUR</x:String>
                         <x:String>USD</x:String>

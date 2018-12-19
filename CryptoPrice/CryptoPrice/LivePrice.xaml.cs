@@ -10,6 +10,7 @@ namespace CryptoPrice
     public partial class LivePrice : ContentPage
     {
         BitcoinPrice btcPrice = new BitcoinPrice();
+        btcPortfolio btcPortfolio = new btcPortfolio();
 
         public LivePrice()
         {
@@ -22,6 +23,8 @@ namespace CryptoPrice
             btcPrice.updatePrice();
             string price = "€ " + btcPrice.currentPrice;
             lblPrice.Text = price;
+
+            lblPortfolio.Text = "€ " + btcPortfolio.getBalance().ToString("N2");
         }
 
         private void btnUpdate_Clicked(object sender, EventArgs e)

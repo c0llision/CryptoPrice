@@ -17,17 +17,22 @@ namespace CryptoPrice
 
         public void convert()
         {
+            convertAmount = convertCurrency(fromCurrency, toCurrency, amount).ToString("N2");
+        }
 
-            var priceUrl = "https://apiv2.bitcoinaverage.com/convert/global?from=" + fromCurrency + "&to=" + toCurrency + "&amount=" + amount;
+        public float convertCurrency(string lFromCurrency, string lToCurrency, string lAmount)
+        {
+            var priceUrl = "https://apiv2.bitcoinaverage.com/convert/global?from=" + lFromCurrency + "&to=" + lToCurrency + "&amount=" + lAmount;
             var response = client.GetAsync(priceUrl).Result;
             if (response.IsSuccessStatusCode)
             {
                 string responseString = response.Content.ReadAsStringAsync().Result;
                 dynamic priceData = JsonConvert.DeserializeObject(responseString);
 
-                float i = priceData.price;
-                convertAmount = i.ToString("N2");
+                return priceData.price;
             }
+
+            return(0);
 
         }
     }

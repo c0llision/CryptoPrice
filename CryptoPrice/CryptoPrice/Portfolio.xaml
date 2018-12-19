@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CryptoPrice.Portfolio">
+    <ContentPage.Content>
+
+        <StackLayout HorizontalOptions="Center">
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Enter the amount of each cryptocurrency you own:" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="btcBal" Text="0"  WidthRequest="100"/>
+                <Label Text=" BTC" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="ltcBal" Text="0"  WidthRequest="100" />
+                <Label Text=" LTC" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="ethBal"  Text="0"  WidthRequest="100"/>
+                <Label Text=" ETH" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Save" x:Name="btnSave" Clicked="btnSave_Clicked" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="0,50,0,0">
+                <Label Text="Value: E 123" x:Name="lblBtc" Font="Bold,15" />
+                <Label Text="Value: E 123" x:Name="lblLtc" Font="Bold,15" />
+                <Label Text="Value: E 123" x:Name="lblEth" Font="Bold,15" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="0,50,0,0">
+                <Label Text="Total Value of Portfolio:" />
+                <Label x:Name="lblBal" Text="E 12345.00" Font="Bold,30" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
