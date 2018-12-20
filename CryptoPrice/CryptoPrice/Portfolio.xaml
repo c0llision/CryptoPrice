@@ -9,17 +9,17 @@
                 <Label Text="Enter the amount of each cryptocurrency you own:" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="btcBal" Text="0"  WidthRequest="100"/>
+                <Entry x:Name="btcBal" Text="0" Keyboard="Numeric"  WidthRequest="100"/>
                 <Label Text=" BTC" />
             </StackLayout>
             
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ltcBal" Text="0"  WidthRequest="100" />
+                <Entry x:Name="ltcBal" Text="0" Keyboard="Numeric"  WidthRequest="100" />
                 <Label Text=" LTC" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ethBal"  Text="0"  WidthRequest="100"/>
+                <Entry x:Name="ethBal"  Text="0" Keyboard="Numeric"  WidthRequest="100"/>
                 <Label Text=" ETH" />
             </StackLayout>
 

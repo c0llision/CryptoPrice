@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -22,8 +24,10 @@ namespace CryptoPrice
 
         public void update()
         {
+            // Set the amount to the one in the entry box
             btcConvert.amount = txtFrom.Text;
 
+            // Set the to/from currency to the values from the picker
             int fromIndex = pckCurrencyFrom.SelectedIndex;
             int toIndex = pckCurrencyTo.SelectedIndex;
 
@@ -33,6 +37,7 @@ namespace CryptoPrice
                 btcConvert.toCurrency = pckCurrencyTo.Items[toIndex];
             }
             
+            // Do the conversion and display the result
             btcConvert.convert();
 
             txtTo.Text = btcConvert.convertAmount;

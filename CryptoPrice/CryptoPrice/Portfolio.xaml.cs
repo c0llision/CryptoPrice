@@ -9,6 +9,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
 using System.Reflection;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -34,6 +36,7 @@ namespace CryptoPrice
 
         public void load()
         {
+            // Loads portfolio values from class
             btcBal.Text = btcPortfolio.data.btcBal.ToString("N2");
             ltcBal.Text = btcPortfolio.data.ltcBal.ToString("N2");
             ethBal.Text = btcPortfolio.data.ethBal.ToString("N2");
@@ -44,6 +47,7 @@ namespace CryptoPrice
 
         public void save()
         {
+            // Saves values to class and then to the file
             float amount;
 
             if (float.TryParse(btcBal.Text, out amount))
@@ -65,45 +69,10 @@ namespace CryptoPrice
 
 
         }
-        private void ReadLocalData()
-        {
-            string fileText = "";
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            string filename = Path.Combine(path, "portfolio.json");
-
-            try
-            {
-                using (var reader = new StreamReader(filename, false))
-                {
-                    fileText = reader.ReadToEnd();
-                }
-            }
-            catch
-            {
-                var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Portfolio)).Assembly;
-
-                // Create the stream based on the file
-                Stream stream = assembly.GetManifestResourceStream("CryptoPrice.Data.portfolio.json");
-                // Create the reader and read the text
-                using (var reader = new StreamReader(stream))
-                {
-                    // Read all the text as a block
-                    fileText = reader.ReadToEnd();
-
-                }
-            }
-
-            PortfolioFile portfolio = JsonConvert.DeserializeObject<PortfolioFile>(fileText);
-            btcBal.Text = portfolio.btcBal.ToString("N2");
-            ltcBal.Text = portfolio.ltcBal.ToString("N2");
-            ltcBal.Text = portfolio.ethBal.ToString("N2");
-
-            BalanceChanged();
-        }
-
 
         private void BalanceChanged()
         {
+            // Recalculates portfolio value
             float balance;
             float amount;
             amount = btcConvert.convertCurrency("BTC", "EUR", btcBal.Text);
@@ -124,28 +93,10 @@ namespace CryptoPrice
 
         private void btnSave_Clicked(object sender, EventArgs e)
         {
-            /*
-            PortfolioFile portfolio = new PortfolioFile
-            {
-                btcBal = float.Parse(btcBal.Text),
-                ltcBal = float.Parse(ltcBal.Text),
-                ethBal = float.Parse(ethBal.Text),
-            };
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-
-            string filename = Path.Combine(path, "portfolio.json");
-
-            using (var streamWriter = new StreamWriter(filename, false))
-            {
-                string jsonText = JsonConvert.SerializeObject(portfolio);
-                streamWriter.WriteLine(jsonText);
-            }
-            */
+            // Event handler for save button, saves portfolio values to file
+            // and recalculates balances
             save();
             BalanceChanged();
-
-            //load();
         }
     }
 }

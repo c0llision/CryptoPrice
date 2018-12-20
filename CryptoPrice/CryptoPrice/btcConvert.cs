@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
 using Newtonsoft.Json;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -22,6 +24,7 @@ namespace CryptoPrice
 
         public float convertCurrency(string lFromCurrency, string lToCurrency, string lAmount)
         {
+            // Use the API to convert the amount
             var priceUrl = "https://apiv2.bitcoinaverage.com/convert/global?from=" + lFromCurrency + "&to=" + lToCurrency + "&amount=" + lAmount;
             var response = client.GetAsync(priceUrl).Result;
             if (response.IsSuccessStatusCode)
@@ -32,6 +35,7 @@ namespace CryptoPrice
                 return priceData.price;
             }
 
+            // Something went wrong, probably can't access API, amount isn't a number, or currency pair invalid.
             return(0);
 
         }

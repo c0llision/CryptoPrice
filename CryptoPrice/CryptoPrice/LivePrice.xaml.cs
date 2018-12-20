@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -20,6 +22,7 @@ namespace CryptoPrice
 
         private void updatePrice()
         {
+            // Updates the price and portfolio displayed
             btcPrice.updatePrice();
             string price = "€ " + btcPrice.currentPrice;
             lblPrice.Text = price;
@@ -29,6 +32,8 @@ namespace CryptoPrice
 
         private void btnUpdate_Clicked(object sender, EventArgs e)
         {
+            // Event handler which ensure the currency is set and updates
+            // the price and portfolio
             int selectedIndex = pckCurrency.SelectedIndex;
 
             if (selectedIndex != -1)

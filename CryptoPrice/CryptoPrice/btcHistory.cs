@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
 using Newtonsoft.Json;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -15,6 +17,7 @@ namespace CryptoPrice
 
         public void update()
         {
+            // Query the API for the historical price data
 
             var url = "https://apiv2.bitcoinaverage.com/indices/global/history/" + currency + "EUR?period=alltime&format=json";
             var response = client.GetAsync(url).Result;
@@ -23,6 +26,7 @@ namespace CryptoPrice
                 string responseString = response.Content.ReadAsStringAsync().Result;
                 dynamic data = JsonConvert.DeserializeObject(responseString);
 
+                // Format the values and store them on the arrays
                 for (int i=0; i < 7; i++)
                 {
                     string date = data[i].time;

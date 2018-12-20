@@ -6,11 +6,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
 using System.Reflection;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
     class PortfolioData
     {
+        // Format of the portfolio.json file
         public float btcBal  { get; set; }
         public float ltcBal  { get; set; }
         public float ethBal  { get; set; }
@@ -22,7 +25,6 @@ namespace CryptoPrice
 
         public PortfolioData data = new PortfolioData
         {
-
             btcBal = 0,
             ltcBal = 0,
             ethBal = 0,
@@ -35,6 +37,7 @@ namespace CryptoPrice
 
         private void readFromFile()
         {
+            // Read the portfolio.json file
             string fileText = "";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string filename = Path.Combine(path, "portfolio.json");
@@ -48,6 +51,7 @@ namespace CryptoPrice
             }
             catch
             {
+                // The file doesn't exist, read the default one from the assembly
                 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Portfolio)).Assembly;
 
                 Stream stream = assembly.GetManifestResourceStream("CryptoPrice.Data.portfolio.json");
@@ -57,12 +61,14 @@ namespace CryptoPrice
                 }
             }
 
+            // Parse it into our class
             data = JsonConvert.DeserializeObject<PortfolioData>(fileText);
         }
 
 
         public void saveFile()
         {
+            // Save our class back to the portfolio.json file
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
@@ -77,6 +83,7 @@ namespace CryptoPrice
 
         public float getBalance()
         {
+            // Calculate the total portfolio value
             float balance;
 
             balance = btcConvert.convertCurrency("BTC", "EUR", data.btcBal.ToString("N2"));

@@ -5,7 +5,6 @@
              x:Class="CryptoPrice.LivePrice">
 
     <StackLayout>
-        <!-- Place new controls here -->
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,50,0,0">
             <Label Text="Currency:" />
@@ -17,18 +16,6 @@
                 </Picker.Items>
                 <Picker.SelectedIndex>0</Picker.SelectedIndex>
             </Picker>
-        </StackLayout>
-
-        <StackLayout VerticalOptions="Center" Margin="0,20,0,0">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                <Label Text="Daily High: " />
-                <Label Text="1234" Font="Bold,15" />
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                <Label Text="Daily Low: " />
-                <Label Text="1234" Font="Bold,15" />
-            </StackLayout>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0" >

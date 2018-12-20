@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Microcharts;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -14,6 +16,8 @@ namespace CryptoPrice
 	public partial class Graph : ContentPage
 	{
         btcHistory btcHistory = new btcHistory();
+        // This page is no longer used, the graph is on the History tab now
+        // which is contains in PriceHistory.xaml
 
 		public Graph ()
 		{

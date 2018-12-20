@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Microcharts;
+// Marcus Walsh
+// g00291472
 
 namespace CryptoPrice
 {
@@ -14,17 +16,17 @@ namespace CryptoPrice
 	public partial class PriceHistory : ContentPage
 	{
         btcHistory btcHistory = new btcHistory();
-
         string[] colours =  { "#ff0033", "#ff8000", "#ffe600", "#1ab34d", "#1a66ff", "#801ab3" , "#801ab3" };
+
 		public PriceHistory ()
 		{
 			InitializeComponent ();
             update();
-
 		}
         
         public void update()
         {
+            // Change currency to the picker value
             int index = pckCurrency.SelectedIndex;
 
             if(index != -1)
@@ -34,6 +36,7 @@ namespace CryptoPrice
 
             btcHistory.update();
 
+            // Generate the graph
             List<Microcharts.Entry> entries = new List<Microcharts.Entry>() {  };
 
             for (int i = 0; i < 7; i++)
@@ -49,6 +52,7 @@ namespace CryptoPrice
             barChart.Chart = new LineChart { Entries = entries };
 
 
+            // Set the placeholder values for the table
             date1.Text = btcHistory.dates[0];
             date2.Text = btcHistory.dates[1];
             date3.Text = btcHistory.dates[2];
@@ -68,6 +72,7 @@ namespace CryptoPrice
 
         private void pckCurrency_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Event handler for when the currency picker is changed
             update();
         }
     }
